@@ -48,6 +48,10 @@ class SlideCountdown extends StatefulWidget {
     this.shouldShowSeconds,
   }) : super(key: key);
 
+
+  
+
+
   /// [Duration] is the duration of the countdown slide,
   /// if the duration has finished it will call [onDone]
   final Duration duration;
@@ -297,7 +301,10 @@ class _SlideCountdownState extends State<SlideCountdown> with CountdownMixin {
             ? widget.shouldShowMinutes!(duration)
             : true;
 
-        final days = DigitItem(
+        final days = Column(
+          children: [
+            Text('kfmk'),
+            DigitItem(
           firstDigit: daysFirstDigitNotifier,
           secondDigit: daysSecondDigitNotifier,
           textStyle: widget.textStyle,
@@ -314,6 +321,8 @@ class _SlideCountdownState extends State<SlideCountdown> with CountdownMixin {
           fade: widget.fade,
           digitsNumber: widget.digitsNumber,
           showSeparator: showHours || showMinutes || showSeconds,
+        )
+          ],
         );
 
         final hours = DigitItem(
