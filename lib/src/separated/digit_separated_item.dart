@@ -96,9 +96,9 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children:
-        //  textDirection.isRtl
-        //     ? [secondDigitWidget, firstDigitWidget]
-        //     : 
+         textDirection.isRtl
+            ? [secondDigitWidget, firstDigitWidget]
+            : 
             [
                 firstDigitWidget,
                 secondDigitWidget,
