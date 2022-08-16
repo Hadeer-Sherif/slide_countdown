@@ -301,10 +301,7 @@ class _SlideCountdownState extends State<SlideCountdown> with CountdownMixin {
             ? widget.shouldShowMinutes!(duration)
             : true;
 
-        final days = Column(
-          children: [
-            Text('kfmk'),
-            DigitItem(
+        final days = DigitItem(
           firstDigit: daysFirstDigitNotifier,
           secondDigit: daysSecondDigitNotifier,
           textStyle: widget.textStyle,
@@ -314,15 +311,13 @@ class _SlideCountdownState extends State<SlideCountdown> with CountdownMixin {
           countUp: widget.countUp,
           slideAnimationDuration: widget.slideAnimationDuration,
           separator: widget.separatorType == SeparatorType.title
-              ? durationTitle.days
-              : separator,
+          ? durationTitle.days
+          : separator,
           separatorPadding: widget.separatorPadding,
           textDirection: widget.textDirection,
           fade: widget.fade,
           digitsNumber: widget.digitsNumber,
           showSeparator: showHours || showMinutes || showSeconds,
-        )
-          ],
         );
 
         final hours = DigitItem(

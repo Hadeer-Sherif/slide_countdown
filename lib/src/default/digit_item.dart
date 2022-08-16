@@ -79,13 +79,16 @@ class DigitItem extends BaseDigits {
       style: separatorStyle,
     );
 
-    List<Widget> children = textDirection.isRtl
-        ? [
-            separatorWidget,
-            secondDigitWidget,
-            firstDigitWidget,
-          ]
-        : [
+    List<Widget> children =
+    //  textDirection.isRtl
+    //     ? [
+    //         separatorWidget,
+    //         secondDigitWidget,
+    //         firstDigitWidget,
+    //       ]
+    //     :
+        
+         [
             firstDigitWidget,
             secondDigitWidget,
             separatorWidget,
