@@ -99,9 +99,9 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
          textDirection.isRtl
             ? [secondDigitWidget, firstDigitWidget]
             : 
-            [
+            [ secondDigitWidget,
                 firstDigitWidget,
-                secondDigitWidget,
+               
               ],
       ),
     );
