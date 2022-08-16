@@ -43,6 +43,10 @@ class SlideCountdownSeparated extends StatefulWidget {
     this.infinityCountUp = false,
     this.slideAnimationDuration = const Duration(milliseconds: 300),
     this.textDirection,
+    this.dayChild,
+    this.hourChild,
+    this.minuteChild,
+    this.secondChild,
     this.digitsNumber,
     this.streamDuration,
     this.onChanged,
@@ -52,6 +56,11 @@ class SlideCountdownSeparated extends StatefulWidget {
     this.shouldShowSeconds,
   }) : super(key: key);
 
+
+   final Widget? dayChild;
+   final Widget? hourChild;
+   final Widget? minuteChild;
+   final Widget? secondChild;
   /// [Duration] is the duration of the countdown slide,
   /// if the duration has finished it will call [onDone]
   final Duration duration;
@@ -286,6 +295,7 @@ class _SlideCountdownSeparatedState extends State<SlideCountdownSeparated>
             : true;
 
         final days = DigitSeparatedItem(
+          child: widget.dayChild??Container(),
           height: widget.height,
           width: widget.width,
           decoration: widget.decoration,
@@ -310,6 +320,7 @@ class _SlideCountdownSeparatedState extends State<SlideCountdownSeparated>
         );
 
         final hours = DigitSeparatedItem(
+          child: widget.hourChild??Container(),
           height: widget.height,
           width: widget.width,
           decoration: widget.decoration,
@@ -334,6 +345,7 @@ class _SlideCountdownSeparatedState extends State<SlideCountdownSeparated>
         );
 
         final minutes = DigitSeparatedItem(
+          child: widget.minuteChild??Container(),
           height: widget.height,
           width: widget.width,
           decoration: widget.decoration,
@@ -358,6 +370,7 @@ class _SlideCountdownSeparatedState extends State<SlideCountdownSeparated>
         );
 
         final seconds = DigitSeparatedItem(
+          child:widget.secondChild??Container() ,
           height: widget.height,
           width: widget.width,
           decoration: widget.decoration,

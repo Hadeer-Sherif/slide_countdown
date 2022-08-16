@@ -4,6 +4,7 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
   const DigitSeparatedItem({
     Key? key,
     required double height,
+    required Widget child,
     required double width,
     required Decoration decoration,
     required ValueNotifier<int> firstDigit,
@@ -24,6 +25,7 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
     List<String>? digitsNumber,
   }) : super(
           key: key,
+          child: child,
           height: height,
           width: width,
           decoration: decoration,
@@ -38,6 +40,7 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
           countUp: countUp,
           slideAnimationDuration: slideAnimationDuration,
           fade: fade,
+          
           separatorPadding: separatorPadding,
           separator: separator,
           showSeparator: showSeparator ?? true,
@@ -106,23 +109,28 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
       ),
     );
 
-    return Visibility(
-      visible: showSeparator,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children:
-         textDirection.isRtl
-            ? [
-                separatorWidget,
-                box,
-              ]
-            :
-             [
-                box,
-                separatorWidget,
-              ],
-      ),
-      replacement: box,
+    return Column(
+      children: [
+        child,
+        Visibility(
+          visible: showSeparator,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children:
+             textDirection.isRtl
+                ? [
+                    separatorWidget,
+                    box,
+                  ]
+                :
+                 [
+                    box,
+                    separatorWidget,
+                  ],
+          ),
+          replacement: box,
+        ),
+      ],
     );
   }
 }

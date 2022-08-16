@@ -5,6 +5,7 @@ abstract class BaseDigitsSeparated extends StatelessWidget {
   const BaseDigitsSeparated({
     Key? key,
     required this.height,
+    required this.child,
     required this.width,
     required this.decoration,
     required this.firstDigit,
@@ -26,6 +27,7 @@ abstract class BaseDigitsSeparated extends StatelessWidget {
   }) : super(key: key);
 
   final double height;
+  final Widget child;
   final double width;
   final Decoration decoration;
   final ValueNotifier<int> firstDigit;
