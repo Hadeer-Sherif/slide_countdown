@@ -80,13 +80,13 @@ class DigitItem extends BaseDigits {
     );
 
     List<Widget> children =
-    //  textDirection.isRtl
-    //     ? [
-    //         separatorWidget,
-    //         secondDigitWidget,
-    //         firstDigitWidget,
-    //       ]
-    //     :
+     textDirection.isRtl
+        ? [
+            separatorWidget,
+            secondDigitWidget,
+            firstDigitWidget,
+          ]
+        :
         
          [
             firstDigitWidget,

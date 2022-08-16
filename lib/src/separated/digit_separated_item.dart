@@ -95,9 +95,11 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: textDirection.isRtl
-            ? [secondDigitWidget, firstDigitWidget]
-            : [
+        children:
+        //  textDirection.isRtl
+        //     ? [secondDigitWidget, firstDigitWidget]
+        //     : 
+            [
                 firstDigitWidget,
                 secondDigitWidget,
               ],
@@ -108,12 +110,14 @@ class DigitSeparatedItem extends BaseDigitsSeparated {
       visible: showSeparator,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: textDirection.isRtl
+        children:
+         textDirection.isRtl
             ? [
                 separatorWidget,
                 box,
               ]
-            : [
+            :
+             [
                 box,
                 separatorWidget,
               ],
